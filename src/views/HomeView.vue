@@ -1,14 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-import { useCounterStore } from '../stores/counter'
-import ChildComponent from '../components/ChildComponent.vue'
+import { ref } from "vue";
+import { useCounterStore } from "../stores/counter";
+import ChildComponent from "../components/ChildComponent.vue";
 
-const store = useCounterStore()
-const userInput = ref('')
+const store = useCounterStore();
+const userInput = ref("");
 
 function updateName() {
-  store.setName(userInput.value)
-  userInput.value = ''
+  store.setName(userInput.value);
+  userInput.value = "";
 }
 </script>
 
@@ -23,7 +23,9 @@ function updateName() {
 
     <div class="card">
       <h2>2. Pinia Storage</h2>
-      <p>Current Name in Store: <strong>{{ store.name }}</strong></p>
+      <p>
+        Current Name in Store: <strong>{{ store.name }}</strong>
+      </p>
       <div class="input-group">
         <input v-model="userInput" placeholder="Enter new name" />
         <button @click="updateName">Update Name in Pinia</button>
@@ -36,27 +38,14 @@ function updateName() {
 
 <style scoped>
 main {
-  padding: 2rem;
+  padding: 20px;
 }
 .card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 .input-group {
-  margin: 1rem 0;
-  display: flex;
-  gap: 0.5rem;
-}
-input {
-  padding: 0.5rem;
-}
-button {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-h1 {
-  margin-bottom: 2rem;
+  margin: 10px 0;
 }
 </style>
